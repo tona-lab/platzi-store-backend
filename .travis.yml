@@ -1,0 +1,25 @@
+language: node_js
+cache:
+  directories:
+    - node_modules
+    - ~/.npm
+node_js:
+  - '12'
+gith: 
+  depth: 3
+script:
+  - yarn test
+notifications:
+  email:
+        recipients:
+        - tona@esmicorreo.com
+        on_success: always
+        on_failure: always
+deploy:
+  provide: heroku
+  skip-cleanup: true
+  keep-history: true
+  api_key: eec7df04-e928-4c83-b700-1223c226fba9
+  app: platzi-store-backend-practica
+  on:
+    repo: tona-lab/platzi-store-backend
